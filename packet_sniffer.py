@@ -25,10 +25,7 @@ print(decimal_ip)
 '''
 
 '''
-combined_data = {
-    "socket_data": 'dest_mac': '45:00:00:2c:1a:2f', 'src_mac': '00:00:40:06:a6:e9', 'eth_proto': 15064
-        }
-json_data = [{'dest_mac': '45:00:00:2c:1a:2f', 'src_mac': '00:00:40:06:a6:e9', 'eth_proto': 15064}, {'dest_mac': '45:00:03:66:1a:3a', 'src_mac': '00:00:40:06:a3:a4', 'eth_proto': 15064, 'version': 4, 'header_length': 20, 'ttl': 64, 'proto': 6, 'src_ip': '216.58.213.106', 'dst_ip': '10.0.2.15', 'real_data': b"\x01\xbb\x8e\xc6\x0f\xf4\xf6\x02<g\x95\x0cP\x18"}]
+
 #print(json_data)
 print('- ' * 20)
 modified_data = [{key: json.dumps(value) if isinstance(value,str) else base64.b64encode(value).decode('utf-8') if isinstance(value,bytes)  else value for key,value in item.items()} for item in json_data]
